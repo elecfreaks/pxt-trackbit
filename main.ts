@@ -68,7 +68,6 @@ namespace Trackbit {
     * Get gray value.The range is from 0 to 255.
     */
     //% channel.fieldEditor="gridpicker" channel.fieldOptions.columns=4
-    //% subcategory=Sensor group="IIC Port"
     //% block="Trackbit channel %channel gray value"
     export function TrackbitgetGray(channel: TrackbitChannel): number {
         pins.i2cWriteNumber(0x1a, channel, NumberFormat.Int8LE)
@@ -77,14 +76,12 @@ namespace Trackbit {
 
     //% State.fieldEditor="gridpicker"
     //% State.fieldOptions.columns=4
-    //% subcategory=Sensor group="IIC Port"
     //% block="Trackbit is %State"
     export function TrackbitState(State: TrackbitStateType): boolean {
         return TrackBit_state_value == State
     }
     //% state.fieldEditor="gridpicker" state.fieldOptions.columns=2
     //% channel.fieldEditor="gridpicker" channel.fieldOptions.columns=4
-    //% subcategory=Sensor group="IIC Port"
     //% block="Trackbit channel %channel is %state"
     export function TrackbitChannelState(channel: TrackbitChannel, state: TrackbitType): boolean {
         let TempVal: number = 0
@@ -110,7 +107,6 @@ namespace Trackbit {
     //% deprecated=true
     //% channel.fieldEditor="gridpicker" channel.fieldOptions.columns=4
     //% detect_target.fieldEditor="gridpicker" detect_target.fieldOptions.columns=2
-    //% subcategory=Sensor group="IIC Port"
     //% block="Trackbit Init_Sensor_Val channel %channel detection target %detect_target value"
     export function Trackbit_Init_Sensor_Val(channel: TrackbitChannel, detect_target: TrackBit_gray): number {
         let Init_Sensor_Val = pins.createBuffer(8)
@@ -121,7 +117,6 @@ namespace Trackbit {
 
     //% deprecated=true
     //% val.min=0 val.max=255
-    //% subcategory=Sensor group="IIC Port"
     //% block="Set Trackbit learn fail value %val"
     export function Trackbit_learn_fail_value(val: number) {
         pins.i2cWriteNumber(0x1a, 6, NumberFormat.Int8LE)
@@ -132,7 +127,6 @@ namespace Trackbit {
     * Gets the position offset.The range is from -3000 to 3000.
     */
     //% sensor_number.fieldEditor="gridpicker" sensor_number.fieldOptions.columns=2
-    //% subcategory=Sensor group="IIC Port"
     //% block="Trackbit sensor offset value"
     export function TrackBit_get_offset(): number {
         let offset: number
@@ -145,7 +139,6 @@ namespace Trackbit {
         return offset;
     }
 
-    //% subcategory=Sensor group="IIC Port"
     //% block="Get a Trackbit state value"
     export function Trackbit_get_state_value() {
         pins.i2cWriteNumber(0x1a, 4, NumberFormat.Int8LE)
