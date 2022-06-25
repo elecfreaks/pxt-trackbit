@@ -1,0 +1,4 @@
+{
+  "Trackbit.TrackBit_get_offset": "Gets the position offset.The range is from -3000 to 3000.",
+  "Trackbit.TrackbitgetGray": "Get gray value.The range is from 0 to 255."
+}
